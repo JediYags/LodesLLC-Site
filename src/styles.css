@@ -550,3 +550,72 @@ footer p {
     transform: translateY(0);
   }
 }
+
+
+/* Final hero/logo refinement */
+.hero {
+  grid-template-columns: 1fr !important;
+}
+
+#home {
+  text-align: left;
+  overflow: hidden;
+}
+
+#home .hero-copy {
+  max-width: 920px;
+  z-index: 3;
+}
+
+.hero-background-logo {
+  position: absolute;
+  inset: 0;
+  display: grid !important;
+  place-items: center !important;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-background-logo img {
+  width: min(860px, 76vw) !important;
+  height: auto;
+  opacity: .24 !important;
+  transform: none !important;
+  object-fit: contain;
+  object-position: center center;
+  filter:
+    drop-shadow(0 0 28px rgba(217,164,65,.38))
+    drop-shadow(0 0 90px rgba(217,164,65,.20)) !important;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, rgba(0,0,0,.05), transparent 34%),
+    linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.68) 38%, rgba(0,0,0,.72) 100%);
+}
+
+.hero-panel {
+  display: none !important;
+}
+
+.header-brand {
+  justify-content: center;
+}
+
+.header-brand img {
+  display: block;
+  object-position: center center;
+}
+
+@media (max-width: 980px) {
+  .hero-background-logo img {
+    width: min(680px, 92vw) !important;
+    opacity: .18 !important;
+  }
+}

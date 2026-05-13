@@ -33,7 +33,7 @@ const backgrounds = [
   {
     id: "home",
     image:
-      "linear-gradient(115deg, rgba(0,0,0,.88), rgba(3,10,18,.76)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2200&q=80')"
+      "radial-gradient(circle at center, rgba(217,164,65,.10), transparent 34%), linear-gradient(115deg, #030405, #08111a 48%, #030405)"
   },
   {
     id: "services",
@@ -140,14 +140,6 @@ function App() {
           </div>
         </motion.div>
 
-        <motion.div
-          className="hero-panel"
-          initial={{ opacity: 0, scale: 0.94, x: 30 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.1 }}
-        >
-          <img src={primaryLogo} alt="LODΣS primary logo" />
-        </motion.div>
       </section>
 
       <section id="services" className="section">
