@@ -17,8 +17,9 @@ import {
   ServerCog,
   ClipboardList
 } from "lucide-react";
-import primaryLogo from "./assets/lodes-primary-clean.png";
+import luxuryLogoBackground from "./assets/luxury-logo-background.png";
 import iconLogo from "./assets/lodes-icon-clean.png";
+import horizontalHeaderLogo from "./assets/horizontal-header-logo.png";
 import "./styles.css";
 
 const navItems = [
@@ -95,12 +96,11 @@ function App() {
 
       <header className={`site-header ${activeSection !== "home" ? "scrolled" : ""}`}>
         <button className="header-brand" onClick={() => scrollTo("home")} aria-label="Go to home">
-          {activeSection !== "home" && (
-            <img src={iconLogo} alt="LODΣS icon" />
+          {activeSection !== "home" ? (
+            <img className="header-logo-horizontal" src={horizontalHeaderLogo} alt="LODΣS horizontal logo" />
+          ) : (
+            <span className="wordmark">LOD<span>Σ</span>S</span>
           )}
-          <span className="wordmark">
-            LOD<span>Σ</span>S
-          </span>
         </button>
 
         <nav className="nav">
@@ -118,7 +118,7 @@ function App() {
 
       <section id="home" className="section hero">
         <div className="hero-background-logo">
-          <img src={iconLogo} alt="LODΣS background emblem" />
+          <img src={luxuryLogoBackground} alt="LODΣS luxury background logo" />
         </div>
         <motion.div
           className="hero-copy"

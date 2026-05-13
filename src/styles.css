@@ -619,3 +619,68 @@ footer p {
     opacity: .18 !important;
   }
 }
+
+
+/* Luxury logo background and scrolled header logo update */
+#home {
+  overflow: hidden;
+}
+
+#home::before {
+  background:
+    radial-gradient(circle at center, rgba(0,0,0,.08), transparent 34%),
+    linear-gradient(90deg, rgba(0,0,0,.90) 0%, rgba(0,0,0,.62) 42%, rgba(0,0,0,.82) 100%) !important;
+}
+
+.hero-background-logo {
+  position: absolute;
+  inset: 0;
+  display: grid !important;
+  place-items: center !important;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-background-logo img {
+  width: min(1040px, 84vw) !important;
+  max-height: 78vh;
+  height: auto;
+  object-fit: contain;
+  object-position: center center;
+  opacity: .34 !important;
+  transform: none !important;
+  filter:
+    drop-shadow(0 0 34px rgba(217,164,65,.40))
+    drop-shadow(0 0 110px rgba(217,164,65,.24)) !important;
+}
+
+.header-logo-horizontal {
+  width: 210px !important;
+  height: 56px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  border-radius: 0 !important;
+  filter: drop-shadow(0 0 14px rgba(217,164,65,.28));
+}
+
+.header-brand {
+  min-width: 210px;
+  justify-content: flex-start !important;
+}
+
+@media (max-width: 980px) {
+  .hero-background-logo img {
+    width: min(780px, 96vw) !important;
+    opacity: .25 !important;
+  }
+
+  .header-logo-horizontal {
+    width: 175px !important;
+    height: 46px !important;
+  }
+
+  .header-brand {
+    min-width: 175px;
+  }
+}
