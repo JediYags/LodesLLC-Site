@@ -93,9 +93,14 @@ function App() {
       <motion.div className="ambient-glow" style={{ left: glowX }} />
       <div className="scrolling-background" style={{ backgroundImage: activeBackground }} />
 
-      <header className="site-header">
-        <button className="wordmark" onClick={() => scrollTo("home")} aria-label="Go to home">
-          LOD<span>Σ</span>S
+      <header className={`site-header ${activeSection !== "home" ? "scrolled" : ""}`}>
+        <button className="header-brand" onClick={() => scrollTo("home")} aria-label="Go to home">
+          {activeSection !== "home" && (
+            <img src={iconLogo} alt="LODΣS icon" />
+          )}
+          <span className="wordmark">
+            LOD<span>Σ</span>S
+          </span>
         </button>
 
         <nav className="nav">
@@ -112,6 +117,9 @@ function App() {
       </header>
 
       <section id="home" className="section hero">
+        <div className="hero-background-logo">
+          <img src={iconLogo} alt="LODΣS background emblem" />
+        </div>
         <motion.div
           className="hero-copy"
           initial={{ opacity: 0, y: 28 }}
